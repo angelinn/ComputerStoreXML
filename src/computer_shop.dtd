@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT computer-store (parts, sockets, memory-types)>
+<!ELEMENT parts (processors, video-cards, random-access-memory-boards, hard-disks, motherboards)>
+<!ELEMENT processors (processor+) >
+<!ELEMENT processor (model, manufacturer, architecture, clock-frequency, cache, threads, available, price) >
+<!ATTLIST processor id ID #REQUIRED 
+                    socket IDREF #REQUIRED 
+                    integrated_video NMTOKEN #REQUIRED>
+
+<!ELEMENT model (#PCDATA) >
+<!ELEMENT manufacturer (#PCDATA) >
+<!ELEMENT architecture (#PCDATA) >
+<!ELEMENT clock-frequency (#PCDATA) >
+<!ELEMENT cache (levels, memory) >
+<!ELEMENT levels (#PCDATA) >
+<!ELEMENT memory (#PCDATA) >
+<!ELEMENT threads (physical, logical) >
+<!ELEMENT physical (#PCDATA) >
+<!ELEMENT logical (#PCDATA) >
+<!ELEMENT available (#PCDATA) >
+<!ELEMENT price (#PCDATA) >
+
+<!ELEMENT random-acccess-memory-boards (ram-board+) >
+<!ELEMENT ram-board (manufacturer, gpu_memory, frequency, channel, available, price) >
+<!ATTLIST ram-board id ID #REQUIRED type IDREF #REQUIRED >
+<!ELEMENT frequency (#PCDATA) >
+<!ELEMENT channel (#PCDATA) >
+
+<!ELEMENT video-cards (video-card+) >
+<!ELEMENT video-card (manufacturer, model, gpu_memory, bus-width, bandwidth, directx, shaders) >
+<!ATTLIST video-card id ID #REQUIRED interface NMTOKEN #REQUIRED >
+<!ELEMENT gpu_memory (#PCDATA) >
+<!ATTLIST gpu_memory type IDREF #REQUIRED >
+<!ELEMENT bus-width (#PCDATA) >
+<!ELEMENT bandwidth (#PCDATA) >
+<!ELEMENT directx (#PCDATA) >
+<!ELEMENT shaders (#PCDATA) >
+
+<!ELEMENT hard-drives (hard-drive+) >
+<!ELEMENT hard-drive (manufacturer, drive-memory, speed, size) >
+<!ATTLIST hard-drive id ID #REQUIRED bus NMTOKEN #REQUIRED laptop-compatible NMTOKEN #REQUIRED >
+<!ELEMENT drive-memory (amount, type) >
+<!ELEMENT amount (#PCDATA) >
+<!ELEMENT type (#PCDATA) >
+<!ELEMENT speed (#PCDATA) >
+<!ELEMENT size (#PCDATA) >
+
+<!ELEMENT motherboards (motherboard+) >
+<!ELEMENT motherboard (manufacturer, chipset, processor, video-card, ram-memory, hard-drive) >
+<!ATTLIST motherboard id ID #REQUIRED socket-id IDREF #REQUIRED >
+
