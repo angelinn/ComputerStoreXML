@@ -22,7 +22,7 @@
             </processor>
         </processors>
         
-        <random-access-memory-boards>
+        <ram-boards>
             <ram-board id="K4" type="D1">
                 <manufacturer>Kingston</manufacturer>
                 <memory>4ГБ</memory>
@@ -31,7 +31,8 @@
                 <available>3</available>
                 <price>80 лева</price>
             </ram-board>
-        </random-access-memory-boards>
+        </ram-boards>
+        
         
         <video-cards>
             <video-card id="GTX850" interface="PCIE-3">
@@ -42,6 +43,8 @@
                 <bandwidth>28.8 ГБ/с</bandwidth>
                 <directx>12</directx>
                 <shaders>14.4 гига-пиксела/с</shaders>
+                <available>3</available>
+                <price>80 лева</price>
             </video-card>
         </video-cards>
         
@@ -53,18 +56,23 @@
                     <type>Флаш</type>
                 </drive-memory>
                 <speed>1800 оборота/м</speed>
-                <size>2.5 инча</size>
+                <size>2.5 инча</size>                
+                <available>3</available>
+                <price>80 лева</price>
             </hard-drive>
         </hard-drives>
         
         <motherboards>
-            <motherboard id="M1" socket-id="S1">
+            <motherboard id="M1"
+                         socket-id="S1"
+                         processor="I54200H"
+                         video-card="GTX850"
+                         ram-memory="K4"
+                         hard-drive="H1">
                 <manufacturer>Foxconn</manufacturer>
                 <chipset>Haswell</chipset>
-                <processor id="I54200H"></processor>
-                <video-card id="GTX850"></video-card>
-                <ram-memory id="K1"></ram-memory>
-                <hard-drive id="H1"></hard-drive>
+                <available>3</available>
+                <price>80 лева</price>
             </motherboard>
         </motherboards>
     </parts>
