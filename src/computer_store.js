@@ -62,12 +62,82 @@ var price = xml.createElement('price');
 processor.appendChild(price);
 price.appendChild(xml.createTextNode('49 лева'));
 
+var videos = xml.createElement('video-cards');
+parts.appendChild(videos);
 
+var videoCard = xml.createElement('video-card');
+videos.appendChild(videoCard);
+
+videoCard.setAttribute('id', 'HD4550');
+videoCard.setAttribute('interface', 'PCIE-2');
+
+var v_man = xml.createElement('manufacturer');
+videoCard.appendChild(v_man);
+v_man.appendChild(xml.createTextNode('AMD'));
+
+var v_model = xml.createElement('model');
+videoCard.appendChild(v_model);
+v_model.appendChild(xml.createTextNode('HD 4550'));
+
+var gpu_memory = xml.createElement('gpu-memory');
+videoCard.appendChild(gpu_memory);
+gpu_memory.setAttribute('type', 'GD5');
+gpu_memory.appendChild(xml.createTextNode('1ГБ'));
+
+var bus_width = xml.createElement('bus-width');
+videoCard.appendChild(bus_width);
+bus_width.appendChild(xml.createTextNode('64 бита'));
+
+var bandwidth = xml.createElement('bandwidth');
+videoCard.appendChild(bandwidth);
+bandwidth.appendChild(xml.createTextNode('6.4 ГБ/с'));
+
+var directx = xml.createElement('directx');
+videoCard.appendChild(directx);
+directx.appendChild(xml.createTextNode('10'));
+
+var shaders = xml.createElement('shaders');
+videoCard.appendChild(shaders);
+shaders.appendChild(xml.createTextNode('11.9 гига-пиксела/с'));
+
+var v_available = xml.createElement('available');
+videoCard.appendChild(v_available);
+v_available.appendChild(xml.createTextNode('2'));
+
+var v_price = xml.createElement('price');
+videoCard.appendChild(v_price);
+v_price.appendChild(xml.createTextNode('79 лева'));
 
 var sockets = xml.createElement('sockets');
 computerStore.appendChild(sockets);
 
+var socket_uno = xml.createElement('socket');
+sockets.appendChild(socket_uno);
+
+socket_uno.setAttribute('id', 'I478');
+socket_uno.appendChild(xml.createTextNode('Intel 478'));
+
+var socket_dos = xml.createElement('socket');
+sockets.appendChild(socket_dos);
+
+socket_dos.setAttribute('id', 'FM2');
+socket_dos.appendChild(xml.createTextNode('AMD FM2'));
+
+
 var memoryTypes = xml.createElement('memory-types');
 computerStore.appendChild(memoryTypes);
+
+var ddr = xml.createElement('memory-type');
+memoryTypes.appendChild(ddr);
+
+ddr.setAttribute('id', 'D1');
+ddr.appendChild(xml.createTextNode('DDR1'));
+
+var gddr = xml.createElement('memory-type');
+memoryTypes.appendChild(gddr);
+
+gddr.setAttribute('id', 'GD5');
+gddr.appendChild(xml.createTextNode('GDDR5'));
+
 
 xml.save("generated.xml");
