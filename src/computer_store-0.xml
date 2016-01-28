@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE computer-store SYSTEM "computer_shop.dtd">
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
 
 <computer-store>
     <parts>
@@ -20,16 +20,40 @@
                 <available>6</available>
                 <price>180 лева</price>
             </processor>
+            <processor id="ath2" socket="A2">
+                <model>Атлон X2 64</model>
+                <manufacturer>АМД</manufacturer>
+                <architecture></architecture>
+                <clock-frequency>2100</clock-frequency>
+                <cache>
+                    <levels>2</levels>
+                    <memory>1МБ</memory>
+                </cache>
+                <threads>
+                    <physical>2</physical>
+                    <logical>2</logical>
+                </threads>
+                <available>1</available>
+                <price>50 лева</price>
+            </processor>
         </processors>
         
         <ram-boards>
             <ram-board id="K4" type="D1">
-                <manufacturer>Kingston</manufacturer>
+                <manufacturer>Кингстън</manufacturer>
                 <memory>4ГБ</memory>
                 <frequency>1664 мега-херца</frequency>
                 <channel>двоен</channel>
                 <available>3</available>
                 <price>80 лева</price>
+            </ram-board>
+            <ram-board id="KXX4" type="D4">
+                <manufacturer>Кингстън</manufacturer>
+                <memory>8GB</memory>
+                <frequency>2800 мега-херца</frequency>
+                <channel>двоен</channel>
+                <available>4</available>
+                <price>149 лева</price>
             </ram-board>
         </ram-boards>
         
@@ -46,6 +70,17 @@
                 <available>3</available>
                 <price>80 лева</price>
             </video-card>
+            <video-card id="HD3450" interface="PCIE-2">
+                <manufacturer>ATI</manufacturer>
+                <model>HD3450</model>
+                <gpu_memory type="GD3">256мб</gpu_memory>
+                <bus-width>64 бита</bus-width>
+                <bandwidth>8.5 ГБ/с</bandwidth>
+                <directx>9</directx>
+                <shaders>4.5 гига-пиксела/с</shaders>
+                <available>1</available>
+                <price>30 лева</price>
+            </video-card>
         </video-cards>
         
         <hard-drives>
@@ -55,23 +90,45 @@
                     <amount>1ТБ</amount>
                     <type>Флаш</type>
                 </drive-memory>
-                <speed>1800 оборота/м</speed>
+                <speed>няма</speed>
                 <size>2.5 инча</size>                
                 <available>3</available>
                 <price>80 лева</price>
+            </hard-drive>
+            <hard-drive id="H2" bus="SATA3" laptop-compatible="true">
+                <manufacturer>Hitachi</manufacturer>
+                <drive-memory>
+                    <amount>1ТБ</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>5200 оборота/м</speed>
+                <size>2.5 инча</size>
+                <available>2</available>
+                <price>119 лева</price>
             </hard-drive>
         </hard-drives>
         
         <motherboards>
             <motherboard id="M1"
-                         socket-id="S1"
+                         socket-id="A2"
                          processor="I54200H"
                          video-card="GTX850"
-                         ram-memory="K4"
+                         ram-memory="KXX4"
                          hard-drive="H1">
                 <manufacturer>Foxconn</manufacturer>
                 <chipset>Haswell</chipset>
                 <available>3</available>
+                <price>150 лева</price>
+            </motherboard>
+            <motherboard id="М2"
+                         socket-id="A2"
+                         processor="ath2"
+                         video-card="HD3450"
+                         ram-memory="K4"
+                         hard-drive="H2">
+                <manufacturer>AsRock</manufacturer>
+                <chipset>AMD</chipset>
+                <available>2</available>
                 <price>80 лева</price>
             </motherboard>
         </motherboards>
@@ -79,10 +136,12 @@
     
     <sockets>
         <socket id="A1">AM3</socket>
-        <socket id="S1">AM2+</socket>
+        <socket id="A2">AM2+</socket>
     </sockets>
     <memory-types>
         <memory-type id="D1">DDR1</memory-type>
+        <memory-type id="D4">DDR4</memory-type>
+        <memory-type id="GD3">GDDR3</memory-type>
         <memory-type id="GD5">GDDR5</memory-type>
     </memory-types>
 </computer-store>
