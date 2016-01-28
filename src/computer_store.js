@@ -3,61 +3,71 @@ var xml = new ActiveXObject("Msxml2.DOMDocument.6.0");
 var pi = xml.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"UTF-8\"");
 xml.appendChild(pi);
 
-var pharmacyStore = xml.createElement("pharmacy-store");
-xml.appendChild(pharmacyStore);
+var computerStore = xml.createElement('computer-store');
+xml.appendChild(computerStore);
 
-var employees = xml.createElement("employees");
-pharmacyStore.appendChild(employees);
+var parts = xml.createElement('parts');
+computerStore.appendChild(parts);
 
-var employee1 = xml.createElement("employee");
-employees.appendChild(employee1);
-employee1.setAttribute("sex", "М");
-employee1.setAttribute("id", "E01");
-employee1.appendChild(xml.createTextNode("Иван Иванов"));
+var processors = xml.createElement('processors');
+parts.appendChild(processors);
 
-var employee2 = xml.createElement("employee");
-employees.appendChild(employee2);
-employee2.setAttribute("id", "E02");
-employee2.appendChild(xml.createTextNode("Петя Петкова"));
+var processor = xml.createElement('processor');
+processors.appendChild(processor);
+processor.setAttribute('id', 'IC478')
+processor.setAttribute('socket', 'I478')
+processor.setAttribute('integrated_video', 'false')
 
-var drugs = xml.createElement("drugs");
-pharmacyStore.appendChild(drugs);
+var model = xml.createElement('model');
+processor.appendChild(model);
+model.appendChild(xml.createTextNode('РЎРµР»РµСЂРѕРЅ FSB'));
 
-var drug = xml.createElement("drug");
-drugs.appendChild(drug);
-drug.setAttribute("did", "D380w47123");
-drug.setAttribute("price", 2.03);
+var manufacturer = xml.createElement('manufacturer');
+processor.appendChild(manufacturer);
+manufacturer.appendChild(xml.createTextNode('РРЅС‚РµР»'));
 
-var name = xml.createElement("name");
-drug.appendChild(name);
-name.appendChild(xml.createTextNode("Аспирин"));
+var architecture = xml.createElement('architecture');
+processor.appendChild(architecture);
+architecture.appendChild(xml.createTextNode('Р‘СЂРѕРґСѓРµР»'));
 
-var activeContent = xml.createElement("active-content");
-drug.appendChild(activeContent);
+var clockFrequency = xml.createElement('clock-frequency');
+processor.appendChild(clockFrequency);
+clockFrequency.appendChild(xml.createTextNode('2200'));
 
-var content = xml.createElement("content");
-activeContent.appendChild(content);
-content.appendChild(xml.createTextNode("Ацетилсалицилова к-на"));
+var cache = xml.createElement('cache');
+processor.appendChild(cache);
 
-var manufacturer = xml.createElement("manufacturer");
-drug.appendChild(manufacturer);
-manufacturer.appendChild(xml.createTextNode("Bayer"));
+var levels = xml.createElement('levels');
+levels.appendChild(xml.createTextNode('2'));
+var memory = xml.createElement('memory');
+memory.appendChild(xml.createTextNode('128 РљР‘'));
+cache.appendChild(levels);
+cache.appendChild(memory);
 
-var provided = xml.createElement("provided");
-drug.appendChild(provided);
-provided.setAttribute("by", "P01 P02");
+var threads = xml.createElement('threads');
+processor.appendChild(threads);
 
-var providers = xml.createElement("providers");
-pharmacyStore.appendChild(providers);
+var physical = xml.createElement('physical');
+physical.appendChild(xml.createTextNode('2'));
+var logical = xml.createElement('logical');
+logical.appendChild(xml.createTextNode('2'));
+threads.appendChild(physical);
+threads.appendChild(logical);
 
-var provider1 = xml.createElement("provider");
-providers.appendChild(provider1);
-provider1.setAttribute("pid", "P01");
-provider1.appendChild(xml.createTextNode("Доставчик 1"));
+var available = xml.createElement('available');
+processor.appendChild(available);
+available.appendChild(xml.createTextNode('1'));
 
-var provider2 = xml.createElement("provider");
-providers.appendChild(provider2);
-provider2.setAttribute("pid", "P02");
-provider2.appendChild(xml.createTextNode("Доставчик 2"));
+var price = xml.createElement('price');
+processor.appendChild(price);
+price.appendChild(xml.createTextNode('49 Р»РµРІР°'));
+
+
+
+var sockets = xml.createElement('sockets');
+computerStore.appendChild(sockets);
+
+var memoryTypes = xml.createElement('memory-types');
+computerStore.appendChild(memoryTypes);
 
 xml.save("generated.xml");
