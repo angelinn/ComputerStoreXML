@@ -19,13 +19,13 @@
 Процесори
 ----------
         <xsl:value-of select="$newline"/>
-        
+        <xsl:value-of select="$newline"/>
         <xsl:for-each select="/computer-store/parts/processors/processor">
             <xsl:value-of select="manufacturer"/> 
             <xsl:text> </xsl:text>
             <xsl:value-of select="model"/>
 -----------------
-            
+            <xsl:value-of select="$newline"/>
             Архитектура:     <xsl:value-of select="architecture"/>
             Цокъл:           <xsl:value-of select="id(@socket)"/>
             Тактова честота: <xsl:value-of select="clock-frequency" /> мега херца 
@@ -46,8 +46,8 @@
         
         <xsl:for-each select="/computer-store/parts/ram-boards/ram-board">
             <xsl:value-of select="manufacturer"/>
-            -----------------
-            
+-----------------
+            <xsl:value-of select="$newline"/>
             Тип: <xsl:value-of select="id(@type)"/>
             Памет: <xsl:value-of select="memory"/>
             Честота: <xsl:value-of select="frequency"/>
@@ -62,13 +62,13 @@
 Видео карти:
 ----------
         <xsl:value-of select="$newline"/>
-        
+        <xsl:value-of select="$newline"/>
         <xsl:for-each select="/computer-store/parts/video-cards/video-card">
             <xsl:value-of select="manufacturer"/> 
             <xsl:text> </xsl:text>
             <xsl:value-of select="model"/>
 -----------------
-            
+            <xsl:value-of select="$newline"/>
             Памет тип: <xsl:value-of select="gpu_memory/id(@type)"/>
             Размер: <xsl:value-of select="gpu_memory"/>
             Ширина на шината: <xsl:value-of select="bus-width"/>
@@ -85,11 +85,11 @@
 Твърди дискове:
 -------------
         <xsl:value-of select="$newline"/>
-        
+        <xsl:value-of select="$newline"/>
         <xsl:for-each select="/computer-store/parts/hard-drives/hard-drive">
             <xsl:value-of select="manufacturer"/>
 -----------------
-
+            <xsl:value-of select="$newline"/>
             Тип памет: <xsl:value-of select="drive-memory/type"/>
             Размер: <xsl:value-of select="drive-memory/amount"/>
             Скорост: <xsl:value-of select="speed"/>
@@ -106,11 +106,11 @@
 Дънни платки:
 -------------
         <xsl:value-of select="$newline"/>
-        
+        <xsl:value-of select="$newline"/>
         <xsl:for-each select="/computer-store/parts/motherboards/motherboard">
             <xsl:value-of select="manufacturer"/>
 ------------------
-
+            <xsl:value-of select="$newline"/>
             Чипсет: <xsl:value-of select="chipset"/>
             Цокъл: <xsl:value-of select="id(@socket-id)"/>
             ---------------------------------            
@@ -118,7 +118,7 @@
             Цена:       <xsl:value-of select="price"/>
             ---------------------------------
             Препоръчани части
-            
+            <xsl:value-of select="$newline"/>
             Процесор: <xsl:value-of select="id(@processor)/model"/>
             Видео карта: <xsl:value-of select="id(@video-card)/model"/>
             Памет: <xsl:value-of select="id(@ram-memory)/manufacturer"/>
