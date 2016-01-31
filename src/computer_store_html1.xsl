@@ -39,7 +39,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Компютърен магазин
+                            <h1 class="page-header">Видове части
                                 <small>XML Програмиране</small>
                             </h1>
                         </div>
@@ -48,21 +48,21 @@
                     <div class="row">
                         <div class="col-md-6 portfolio-item">
                             <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x400" alt="" />
+                                <img class="img-responsive" src="images/ram.jpg" alt="" />
                             </a>
                             <h3>
-                                <a href="#">Project One</a>
+                                <a href="#">RAM Памети</a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <p>Различни видове DRAM памети!</p>
                         </div>
                         <div class="col-md-6 portfolio-item">
                             <a href="#">
-                                <img class="img-responsive" src="http://placehold.it/700x400" alt="" />
+                                <img class="img-responsive" src="images/cpus.jpg" alt="" />
                             </a>
                             <h3>
-                                <a href="#">Project Two</a>
+                                <a href="#">Процесори и дънни платки</a>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <p>Предлагаме всякакви видове цокли.</p>
                         </div>
                     </div>
                     <footer>
