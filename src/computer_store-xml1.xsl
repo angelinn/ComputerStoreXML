@@ -12,27 +12,31 @@
                 <motherboard_manufacturer id="{@id}">
                     <xsl:value-of select="manufacturer"/>
                 </motherboard_manufacturer>
-                <cpu_manufacturer id="{@processor}">
-                    <xsl:value-of select="id(@processor)/manufacturer"/>
-                </cpu_manufacturer>
-                <cpu_model>
-                    <xsl:value-of select="id(@processor)/model" />
-                </cpu_model>
-                <clock_speed>
-                    <xsl:value-of select="id(@processor)/clock-frequency"/>
-                    <xsl:text>mhz</xsl:text>
-                </clock_speed>
-                <cores>
-                    <xsl:value-of select="id(@processor)/threads/physical"/>
-                </cores>
-                <gpu_model id="{@video-card}">
-                    <xsl:value-of select="id(@video-card)/model"/>
-                </gpu_model>
-                <gpu_memory>
-                    <xsl:value-of select="id(@video-card)/gpu_memory"/>
-                    <xsl:text> </xsl:text>
-                    <xsl:value-of select="id(@video-card)/gpu_memory/id(@type)"/>
-                </gpu_memory>
+                <cpu id="{@processor}">
+                    <manufacturer>
+                        <xsl:value-of select="id(@processor)/manufacturer"/>
+                    </manufacturer>
+                    <model>
+                        <xsl:value-of select="id(@processor)/model" />
+                    </model>
+                    <clock_speed>
+                        <xsl:value-of select="id(@processor)/clock-frequency"/>
+                        <xsl:text>mhz</xsl:text>
+                    </clock_speed>
+                    <cores>
+                        <xsl:value-of select="id(@processor)/threads/physical"/>
+                    </cores>
+                </cpu>
+                <gpu>
+                    <model id="{@video-card}">
+                        <xsl:value-of select="id(@video-card)/model"/>
+                    </model>
+                    <memory>
+                        <xsl:value-of select="id(@video-card)/gpu_memory"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="id(@video-card)/gpu_memory/id(@type)"/>
+                    </memory>
+                </gpu>
                 <integrated_video>
                     <xsl:value-of select="id(@processor)/@integrated_video"/>
                 </integrated_video>
