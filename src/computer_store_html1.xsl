@@ -45,6 +45,26 @@
                         </div>
                     </div>
                     
+                    <div class="row">
+                        <div class="col-md-6 portfolio-item">
+                            <a href="#">
+                                <img class="img-responsive" src="http://placehold.it/700x400" alt="" />
+                            </a>
+                            <h3>
+                                <a href="#">Project One</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                        </div>
+                        <div class="col-md-6 portfolio-item">
+                            <a href="#">
+                                <img class="img-responsive" src="http://placehold.it/700x400" alt="" />
+                            </a>
+                            <h3>
+                                <a href="#">Project Two</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                        </div>
+                    </div>
                     <footer>
                         <div class="row">
                             <div class="col-lg-12">
