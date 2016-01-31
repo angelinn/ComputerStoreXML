@@ -4,8 +4,28 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
-    <xsl:template match="part">
-        
+    <xsl:template name="processors">
+        <xsl:for-each select="/computer-store/parts/processors/processor">
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <countNo>
+                        <img class="img-responsive" src="images/cpu_{position()}.jpg" />
+                    </countNo>
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3><xsl:value-of select="manufacturer" /></h3>
+                <h4><xsl:value-of select="model" /></h4>
+                <p>Clock Speed: <xsl:value-of select="clock-frequency" /> мега херца</p>
+                <p>Цокъл: <xsl:value-of select="id(@socket)" /></p>        
+                <p>Ядра: <xsl:value-of select="threads/physical" /></p>       
+                <p>Нишки: <xsl:value-of select="threads/logical" /></p>         
+                <p>Цена: <xsl:value-of select="price" /></p>        
+            </div>
+        </div>
+        <hr />
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="/">
@@ -47,25 +67,12 @@
                         </h1>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-7">
-                        <a href="#">
-                            <img class="img-responsive" src="http://placehold.it/700x300" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-5">
-                        <h3>Project One</h3>
-                        <h4>Subheading</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                        <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-                    </div>
-                </div>
-                                
-                <hr/>
+
+                <xsl:call-template name="processors" />
                 <footer>
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>XML Програмиране - Анджелин Неделчев</p>
+                            <p>XML Програмиране 2016 - Анджелин Неделчев</p>
                         </div>
                     </div>
                 </footer>
