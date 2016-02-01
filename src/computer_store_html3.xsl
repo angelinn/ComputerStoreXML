@@ -4,6 +4,61 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <xsl:template name="video-cards">
+        <xsl:for-each select="/computer-store/parts/video-cards/video-card">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="images/gpu{position()}.jpg" alt="" />
+                <h3><xsl:value-of select="manufacturer" />
+                    <small>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="model" />
+                    </small>
+                </h3>
+                <p>
+                    <xsl:value-of select="gpu_memory" />
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="gpu_memory/id(@type)" />
+                    <xsl:text> - </xsl:text>
+                    <xsl:value-of select="available" />
+                    <xsl:text> бройки - </xsl:text>
+                    <xsl:value-of select="price" />
+                </p>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="motherboards">
+        <xsl:for-each select="/computer-store/parts/motherboards/motherboard">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="images/board{position()}.jpg" alt="" />
+                <h3><xsl:value-of select="manufacturer" />
+                    <small>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="chipset" />
+                    </small>
+                </h3>
+                <p>
+                    <xsl:value-of select="id(@socket-id)" />
+                    <xsl:text> - </xsl:text>
+                    <xsl:value-of select="available" />
+                    <xsl:text> бройки - </xsl:text>
+                    <xsl:value-of select="price" />
+                </p>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="hard-drives">
+        <xsl:for-each select="/computer-store/parts/hard-drives/hard-drive">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="images/cpu{position()}.jpg" alt="" />
+                <h3><xsl:value-of select="manufacturer" />
+                    <small><xsl:value-of select="model" /></small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
     
     <xsl:template match="/">
         <html lang="en">
@@ -42,7 +97,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Компютърен магазин
+                            <h1 class="page-header">Хардуер
                                 <small>XML Програмиране</small>
                             </h1>
                         </div>
@@ -50,48 +105,8 @@
                         
                         <!-- Team Members Row -->
                         <div class="row">
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
-                                    <h3>John Smith
-                                        <small>Job Title</small>
-                                    </h3>
-                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
-                                    <h3>John Smith
-                                        <small>Job Title</small>
-                                    </h3>
-                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
-                                    <h3>John Smith
-                                        <small>Job Title</small>
-                                    </h3>
-                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
-                                    <h3>John Smith
-                                        <small>Job Title</small>
-                                    </h3>
-                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
-                                    <h3>John Smith
-                                        <small>Job Title</small>
-                                    </h3>
-                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
-                                    <h3>John Smith
-                                        <small>Job Title</small>
-                                    </h3>
-                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                            </div>
+                            <xsl:call-template name="video-cards" />
+                            <xsl:call-template name="motherboards" />
                         </div>
                         
                         <hr />

@@ -26,7 +26,17 @@
                     <p>Скорост: <xsl:value-of select="speed" /></p>
                     </xsl:if>
                     <p>Размер: <xsl:value-of select="size" /></p>        
-                    <p>Съвместим с лаптоп: <xsl:value-of select="@laptop_compatible" /></p>       
+                    <p>
+                        Съвместим с лаптоп: 
+                        <xsl:choose>
+                            <xsl:when test="@laptop-compatible = 'true'">
+                                Да
+                            </xsl:when>
+                            <xsl:otherwise>
+                                Не
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </p>       
                     <p>Налични: <xsl:value-of select="available" /></p>              
                     <p>Връзка: <xsl:value-of select="@bus" /></p>         
                     <p>Цена: <xsl:value-of select="price" /></p>        
