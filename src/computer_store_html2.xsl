@@ -4,6 +4,67 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <xsl:template name="hard-drives">
+        <xsl:for-each select="/computer-store/parts/hard-drives/hard-drive">
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <countNo>
+                            <img class="img-responsive" src="images/hdd_{position()}.jpg" />
+                        </countNo>
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3><xsl:value-of select="manufacturer" /></h3>
+                    <h4>
+                        <xsl:value-of select="drive-memory/amount" />
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="drive-memory/type" />
+                    </h4>
+                    <br />
+                    <xsl:if test="speed != 'няма'">
+                    <p>Скорост: <xsl:value-of select="speed" /></p>
+                    </xsl:if>
+                    <p>Размер: <xsl:value-of select="size" /></p>        
+                    <p>Съвместим с лаптоп: <xsl:value-of select="@laptop_compatible" /></p>       
+                    <p>Налични: <xsl:value-of select="available" /></p>              
+                    <p>Връзка: <xsl:value-of select="@bus" /></p>         
+                    <p>Цена: <xsl:value-of select="price" /></p>        
+                </div>
+            </div>
+            <hr />
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="ram-boards">
+        <xsl:for-each select="/computer-store/parts/ram-boards/ram-board">
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <countNo>
+                            <img class="img-responsive" src="images/ram_{position()}.jpg" />
+                        </countNo>
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3><xsl:value-of select="manufacturer" /></h3>
+                    <h4>
+                        <xsl:value-of select="drive-memory/amount" />
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="drive-memory/type" />
+                    </h4>
+                    <br />
+                    <p>Памет: <xsl:value-of select="memory" /></p>        
+                    <p>Тип: <xsl:value-of select="id(@type)" /></p>               
+                    <p>Честота: <xsl:value-of select="frequency" /></p>           
+                    <p>Канал: <xsl:value-of select="channel" /></p>          
+                    <p>Налични: <xsl:value-of select="available" /></p>     
+                    <p>Цена: <xsl:value-of select="price" /></p>        
+                </div>
+            </div>
+            <hr />
+        </xsl:for-each>
+    </xsl:template>
     
     <xsl:template match="/">
         <html lang="en">
@@ -44,6 +105,9 @@
                             </h1>
                         </div>
                     </div>
+                    
+                    <xsl:call-template name="hard-drives" />
+                    <xsl:call-template name="ram-boards" />
                     
                     <footer>
                         <div class="row">
