@@ -19,6 +19,9 @@
                 <style>
                     body   { padding-top: 70px; }
                     footer { margin: 50px 0;    }
+                    .img-center {
+                    margin: 0 auto;
+                    }
                 </style>
             </head>
             
@@ -44,7 +47,54 @@
                             </h1>
                         </div>
                     </div>
-                    
+                        
+                        <!-- Team Members Row -->
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6 text-center">
+                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
+                                    <h3>John Smith
+                                        <small>Job Title</small>
+                                    </h3>
+                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 text-center">
+                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
+                                    <h3>John Smith
+                                        <small>Job Title</small>
+                                    </h3>
+                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 text-center">
+                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
+                                    <h3>John Smith
+                                        <small>Job Title</small>
+                                    </h3>
+                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 text-center">
+                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
+                                    <h3>John Smith
+                                        <small>Job Title</small>
+                                    </h3>
+                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 text-center">
+                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
+                                    <h3>John Smith
+                                        <small>Job Title</small>
+                                    </h3>
+                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 text-center">
+                                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" />
+                                    <h3>John Smith
+                                        <small>Job Title</small>
+                                    </h3>
+                                    <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                            </div>
+                        </div>
+                        
+                        <hr />
                     <footer>
                         <div class="row">
                             <div class="col-lg-12">
