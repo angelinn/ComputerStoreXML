@@ -112,7 +112,7 @@ var v_model = xml.createElement('model');
 videoCard.appendChild(v_model);
 v_model.appendChild(xml.createTextNode('HD 4550'));
 
-var gpu_memory = xml.createElement('gpu-memory');
+var gpu_memory = xml.createElement('gpu_memory');
 videoCard.appendChild(gpu_memory);
 gpu_memory.setAttribute('type', 'GD5');
 gpu_memory.appendChild(xml.createTextNode('1ца'));
@@ -147,7 +147,7 @@ parts.appendChild(hard_drives);
 var hard_drive = xml.createElement('hard-drive');
 hard_drives.appendChild(hard_drive);
 
-hard_drive.setAttribute('id', 'WDB');
+hard_drive.setAttribute('id', 'IBM3000');
 hard_drive.setAttribute('bus', 'SATA3');
 hard_drive.setAttribute('laptop-compatible', 'true');
 
@@ -243,4 +243,4 @@ gddr.setAttribute('id', 'GD5');
 gddr.appendChild(xml.createTextNode('GDDR5'));
 
 
-xml.save("computer_store-dom.xml ");
+xml.save("computer_store_dom.xml ");
