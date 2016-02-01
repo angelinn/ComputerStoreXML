@@ -4,6 +4,30 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <xsl:template name="memory">
+        <xsl:for-each select="/computer-store/memory-types/memory-type">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/memory_{position()}.jpg" alt="" />
+                </a>
+                <h3>
+                    <a href="#"><xsl:value-of select="text()" /></a>
+                </h3>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    <xsl:template name="socket">
+        <xsl:for-each select="/computer-store/sockets/socket">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="images/socket_{position()}.jpg" alt="" />
+                </a>
+                <h3>
+                    <a href="#"><xsl:value-of select="text()" /></a>
+                </h3>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
     
     <xsl:template match="/">
         <html lang="en">
@@ -64,6 +88,9 @@
                             </h3>
                             <p>Предлагаме всякакви видове цокли.</p>
                         </div>
+                        
+                        <xsl:call-template name="memory" />
+                        <xsl:call-template name="socket" />
                     </div>
                     <footer>
                         <div class="row">
